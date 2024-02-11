@@ -16,7 +16,7 @@ function playNoteOnKeyUp(event) {
 function playNoteOn(frequency) {
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
-    oscillator.type = 'triangle'; // Use triangle wave
+    oscillator.type = 'sawtooth'; // Use triangle wave
     oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
     oscillator.connect(audioContext.destination);
@@ -52,3 +52,100 @@ document.addEventListener('keydown', function(event) {
 });
 
 document.addEventListener('keyup', playNoteOnKeyUp);
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'g') {
+        playNoteOn(293.66); // D4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 293.66) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'h') {
+        playNoteOn(329.63); // E4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 329.63) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'j') {
+        playNoteOn(349.23); // F4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 349.23) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'k') {
+        playNoteOn(392.00); // G4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 392.00) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'l') {
+        playNoteOn(440.00); // A4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 440.00) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+document.addEventListener('keydown', function(event) {
+    if (event.key === ';') {
+        playNoteOn(493.88); // B4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 493.88) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+document.addEventListener('keydown', function(event) {
+    if (event.key === "'") {
+        playNoteOn(523.25); // C4 note
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            if (parseFloat(key.dataset.note) === 523.25) {
+                key.classList.add('active');
+            }
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
